@@ -20,13 +20,23 @@ button{
   color: #57969b;
 }
 
+.redBack{
+  background-color: #ec483e;
+}
+
+.blueBack{
+  background-color:#57969b;
+}
+
 header{
   width:100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  background: url(/images/basketball-95607_1920.jpg) no-repeat center center fixed;
+  background-image: url("images/basketball-81775_1920.jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   z-index: 0;
 }
@@ -35,8 +45,7 @@ header::after{
   content: "";
   z-index: 1;
   position: absolute;
-  background-color: #1d1c1c;
-  opacity: 0.65;
+  background-color: rgba(29,28,28, 0.6);
   top: 0; bottom: 0; left: 0; right: 0;
   background-size: cover;
 }
@@ -120,8 +129,9 @@ header::after{
 .mainHeading{
   color: #f8f7f5;
   font-size: 5.5rem;
+  font-weight: bold;
   line-height: 82px;
-  margin-top: 7%;
+  margin-top: 7%;  
 }
 
 .subHeading{
@@ -145,9 +155,155 @@ header::after{
   text-transform: uppercase;
 }
 
+/* NEW ARRIVALS SECTION */
+.newArrivals{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  height: 90vh;
+  background: radial-gradient(circle, rgb(44, 44, 44) 0%, rgb(12, 12, 12) 43%);
+}
+
+.newArrivals > h2{
+  font-size: 4rem;
+  letter-spacing: 1.8px;
+  font-weight: bold;
+  color: #f8f7f5;
+}
+
+.btnContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.redBtn{
+  height: 55px;
+  width: 200px;
+  margin: 5px;
+  border: 2px solid #f8f7f5;
+  background: #ec483e;
+  color: #f8f7f5;
+  cursor: pointer;
+  font-size: 1.9rem;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.blueBtn{
+  height: 55px;
+  width: 200px;
+  margin: 5px;
+  border: 2px solid #f8f7f5;
+  background:  #57969b;
+  color: #f8f7f5;
+  cursor: pointer;
+  font-size: 1.9rem;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+/* CLOTHING SECTION */
+
+.clothingSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height: 100vh;
+  background-image: url("images/clothingBack.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+}
+
+.clothingSection::after{
+  content: "";
+  z-index: 1;
+  position: absolute;
+  background-color: rgba(29,28,28, 0.6);
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-size: cover;
+}
+
+.clothingWrapper{
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 80vh;
+  z-index:3;
+}
+
+.clothingContainer{
+  width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.leftImg{
+  background-image: url("images/pexels-wallace-chuck-3152044.jpg");
+  position: relative;
+}
+
+.rightImg{
+  background-image: url("images/pexels-kool-shooters-6076451.jpg");
+  position: relative;
+}
+
+.leftImg::after, .rightImg::after{
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-color: rgba(29,28,28, 0.2);
+  background-size: cover;
+}
+
+.leftImg:hover::after, .rightImg:hover::after{
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-color: rgba(29,28,28, 0.4);
+  background-size: cover;
+}
+
+.imageStyle{
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  transition: 0.5s ease-in;
+
+}
+
+.imageStyle:hover{
+  transform: scale(1.1);
+  transition: 0.5s ease-out;
+  cursor: pointer;
+}
+
+.bottomBtn{
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  opacity: 90%;
+  font-family: Anton;
+  
+}
+
+.bottomBtn > p{
+  
+}
+
 
 
 @media screen and (max-width: 1024px) {
+  header{
+    height: 95vh;
+  }
   .menuBar{
     flex-direction: column;
   }
@@ -180,5 +336,18 @@ header::after{
   }
   .mainButton{
     margin-top: 40px;
+  }
+  .newArrivals{
+    padding: 0;
+    background: radial-gradient(circle 550px, rgb(44, 44, 44) 0%, rgb(12, 12, 12) 43%);
+    height: 80vh;
+  }
+  .newArrivals > h2{
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  .btnContainer{
+    flex-direction: column;
+    align-items: center;
   }
 }
