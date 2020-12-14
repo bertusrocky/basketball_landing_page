@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+
 body{
   font-family: 'Poppins', sans-serif;
 }
@@ -65,8 +66,7 @@ header::after{
 }
 
 .logoContainer,
-.navigationContainer,
-.shoppingContainer{
+.navigationContainer{
   display: flex;
 }
 
@@ -88,7 +88,7 @@ header::after{
 
 .navLinks{
   display:flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex: 1;
   list-style: none;
 }
@@ -96,21 +96,31 @@ header::after{
 .navLink{
   text-decoration: none;
   color: #f8f7f5;
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 600;
   cursor: pointer;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 1.3px;
+  position: relative;
 }
 
-.shoppingContainer{
-  flex: 1;
-  justify-content: flex-end;
+.navLink:after {    
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  transition: width 0.5s ease 0s, left 0.5s ease 0s;
+  background: #f8f7f5;
+}
+.navLink:hover:after { 
+  width: 100%; 
+  left: 0;
 }
 
-.shoppingBag{
-  color: #ec483e;
-  cursor: pointer;
+.navLink:hover{
+  color: #f8f7f5;
 }
 
 /* HEADER TEXT AND BUTTON */
@@ -177,25 +187,11 @@ header::after{
   justify-content: center;
 }
 
-.redBtn{
+.button{
   height: 55px;
   width: 200px;
   margin: 5px;
   border: 2px solid #f8f7f5;
-  background: #ec483e;
-  color: #f8f7f5;
-  cursor: pointer;
-  font-size: 1.9rem;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-}
-
-.blueBtn{
-  height: 55px;
-  width: 200px;
-  margin: 5px;
-  border: 2px solid #f8f7f5;
-  background:  #57969b;
   color: #f8f7f5;
   cursor: pointer;
   font-size: 1.9rem;
@@ -215,6 +211,7 @@ header::after{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   position: relative;
   z-index: 0;
 }
@@ -223,7 +220,7 @@ header::after{
   content: "";
   z-index: 1;
   position: absolute;
-  background-color: rgba(29,28,28, 0.6);
+  background-color: rgba(80,80,80, 0.4);
   top: 0; bottom: 0; left: 0; right: 0;
   background-size: cover;
 }
@@ -291,13 +288,73 @@ header::after{
   bottom: 0;
   opacity: 90%;
   font-family: Anton;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
+}
+
+.bottomBtn:hover{
+  border: 2px solid #f8f7f5;
 }
 
 .bottomBtn > p{
-  
+  text-decoration: none;
+  color: #f8f7f5;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
+.newsletter{
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #141414;
+}
+
+.newsletter > h1{
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: #f8f7f5;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+form{
+  position: relative;
+  width: 50%;
+  margin-top: 25px;
+}
+
+input[type=email] {
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  border: none;
+}
+
+input[type=email]:focus {
+  outline: none;
+}
+
+.subscribe{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 50px;
+  padding: 0 15px;
+  letter-spacing: 1.2px;
+  background-color: #cc0000;
+  color:  #f8f7f5;
+  border: none;
+  outline: none;
+}
 
 
 @media screen and (max-width: 1024px) {
@@ -317,12 +374,6 @@ header::after{
     align-items: center;
     justify-content: center;
   }
-  .shoppingContainer{
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
   .textContainer{
     align-items: center;
   }
@@ -349,5 +400,11 @@ header::after{
   .btnContainer{
     flex-direction: column;
     align-items: center;
+  }
+  form{
+    width: 90%;
+  }
+  .newsletter > h1{
+    font-size: 1.8rem;
   }
 }
