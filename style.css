@@ -356,6 +356,30 @@ input[type=email]:focus {
   outline: none;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #131313;
+  height: 15vh;
+}
+
+.socialContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+footer > h4{
+  font-size: 5rem;
+}
+
+.socialContainer a{
+  text-decoration: none;
+  color:  #f8f7f5;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 @media screen and (max-width: 1024px) {
   header{
